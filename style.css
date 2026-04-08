@@ -1,8 +1,10 @@
 /* 
    Mohammad Ali Bokhari
    Style Stage Project
-   Sources:
+
+   Sources consulted:
    https://stylestage.dev/
+   https://stylestage.dev/guidelines/
    https://jigsaw.w3.org/css-validator/
 */
 
@@ -10,40 +12,115 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #111827;
-  color: #f9fafb;
-  line-height: 1.6;
+html {
+  scroll-behavior: smooth;
 }
 
-/* CONTAINER */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: #111827;
+  color: #f9fafb;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: #93c5fd;
+}
+
+a:hover,
+a:focus {
+  color: #22c55e;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #22c55e;
+  color: #000000;
+  padding: 0.75rem 1rem;
+  z-index: 1000;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Layout helpers */
 .container {
   width: min(1100px, 90%);
   margin: 0 auto;
 }
 
-/* HEADER */
+/* Header */
 header {
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 2.5rem 1rem 2rem;
 }
 
 header h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.8rem, 7vw, 5rem);
   color: #22c55e;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
 }
 
 header h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #9ca3af;
+  margin-bottom: 1rem;
 }
 
-/* NAV */
+header p {
+  margin-bottom: 1.5rem;
+}
+
+/* GitHub button */
+a.link-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #22c55e;
+  color: #000000;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link-github svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Navigation */
 nav {
-  background: #1f2933;
+  background: #1f2937;
+  border-top: 1px solid #374151;
+  border-bottom: 1px solid #374151;
 }
 
 nav ul {
@@ -53,22 +130,23 @@ nav ul {
   list-style: none;
   padding: 1rem;
   margin: 0;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 nav a {
   text-decoration: none;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
+  color: #ffffff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
   background: #22c55e;
-  color: black;
+  color: #000000;
 }
 
-/* MAIN */
+/* Main content */
 main {
   padding: 2rem 0;
 }
@@ -77,73 +155,117 @@ section,
 .profile .container,
 #styles .container,
 .page-footer .container {
-  background: #1f2933;
+  background: #1f2937;
   margin-bottom: 1.5rem;
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
-/* HEADINGS */
-h2, h3, h4 {
+/* Headings */
+h2,
+h3,
+h4 {
   color: #22c55e;
+  margin-bottom: 1rem;
 }
 
-/* BUTTONS */
-a.link-github,
+/* Text spacing */
+p,
+li {
+  margin-bottom: 1rem;
+}
+
+ul,
+ol {
+  padding-left: 1.25rem;
+}
+
+/* Buttons / important links */
 .link-guidelines,
 .link-allstyles,
 .link-downloadcss,
 .link-downloadhtml,
-.link-codepen {
+.link-codepen,
+.profile a:last-child {
   display: inline-block;
   background: #22c55e;
-  color: black;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
+  color: #000000;
   text-decoration: none;
+  padding: 0.75rem 1.1rem;
+  border-radius: 10px;
   margin-top: 0.5rem;
+  font-weight: bold;
 }
 
-/* LISTS */
-ul, ol {
-  padding-left: 1.2rem;
+/* Features list */
+.features {
+  list-style: none;
+  padding-left: 0;
 }
 
-/* FEATURES */
 .features li {
   background: #111827;
+  border: 1px solid #374151;
+  border-radius: 10px;
   padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
-/* PROFILE */
+/* Profile list */
+.profile ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 .profile li {
+  padding: 0.6rem 0;
   border-bottom: 1px solid #374151;
-  padding: 0.5rem 0;
 }
 
-/* FOOTER */
+/* Footer */
 .page-footer {
   background: #020617;
   padding: 2rem 0;
   text-align: center;
 }
 
-/* 🔥 DESKTOP LAYOUT */
-@media (min-width: 900px) {
+.page-footer a {
+  color: #93c5fd;
+}
 
+.page-footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Desktop layout */
+@media (min-width: 900px) {
   main > .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
+    align-items: start;
   }
 
+  article section,
+  #styles .container,
+  .profile .container,
+  .page-footer .container {
+    padding: 2rem;
+  }
 }
 
-/* ACCESSIBILITY */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
     transition: none !important;
   }
 }
